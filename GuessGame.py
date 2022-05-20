@@ -1,7 +1,7 @@
 import random
 import time
 
-from WorldOfGames.MemoryGame import clearConsole
+from MemoryGame import clearConsole
 
 
 def generate_number(difficulty):
