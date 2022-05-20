@@ -35,7 +35,7 @@ def play(difficulty):
             print("\nVery Good, you wan the game\n")
             time.sleep(3)
             clearConsole()
-            return
+            return 1
         else:
             to_continue = input("Nop!! \nDo you want to try again?[y/n]\n")
             try_again = True
@@ -47,4 +47,5 @@ def play(difficulty):
                     try_again = False
                 else:
                     to_continue = input("Not what we expected!! Please type [y/n]")
-    return print("Sorry, But You Lost the game\n")
+    print("Sorry, But You Lost the game\n")
+    return 0

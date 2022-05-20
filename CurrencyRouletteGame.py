@@ -1,7 +1,7 @@
 import time
 import random
 from currency_converter import CurrencyConverter
-from WorldOfGames.MemoryGame import clearConsole
+from MemoryGame import clearConsole
 
 
 def get_money_interval(difficulty):
@@ -35,7 +35,7 @@ def currency_play(difficulty):
             print("\nVery Good, you wan the game\n")
             time.sleep(2)
             clearConsole()
-            return
+            return 1
         else:
             try_again = True
             to_continue = input("Nop!! \nDo you want to try again?[y/n]\n")
@@ -47,4 +47,5 @@ def currency_play(difficulty):
                     try_again = False
                 else:
                     to_continue = input("Not what we expected!! Please type [y/n]")
-    return print("Sorry, But You Lost the game\n")
+    print("Sorry, But You Lost the game\n")
+    return 0

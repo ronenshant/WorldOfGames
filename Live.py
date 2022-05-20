@@ -1,6 +1,7 @@
 from GuessGame import play
 from MemoryGame import memory_play
 from CurrencyRouletteGame import currency_play
+from Score import *
 
 
 def welcome(name):
@@ -45,16 +46,19 @@ def load_game():
             continue
     while continue_to_play:
         if game == 1:
-            memory_play(difficulty)
+            if memory_play(difficulty) == 1:
+                add_score(difficulty)
             game = 0
             load_game()
         elif game == 2:
-            play(difficulty)
+            if play(difficulty) == 1:
+                add_score(difficulty)
             game = 0
             load_game()
         elif game == 3:
+            if currency_play(difficulty) == 1:
+                add_score(difficulty)
             game = 0
-            currency_play(difficulty)
             load_game()
         else:
             continue_to_play = False
